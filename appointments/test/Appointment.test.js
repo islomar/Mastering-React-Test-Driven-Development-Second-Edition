@@ -1,5 +1,7 @@
 import React from "react";
+import {act} from 'react';
 import ReactDOM from "react-dom/client";
+import { Appointment } from "../src/Appointment";
 
 describe("Appointment", () => {
     it("renders the customer first name", () => {
@@ -10,7 +12,9 @@ describe("Appointment", () => {
         const container = document.createElement("div");
         document.body.appendChild(container);
 
-        ReactDOM.createRoot(container).render(component);
+        act(() =>
+            ReactDOM.createRoot(container).render(component)
+        );
 
         expect(document.body.textContent).toContain("Ashley");
     });
