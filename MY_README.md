@@ -23,7 +23,9 @@ npm install --save @babel/runtime
   - A test environment is a piece of code that runs before and after your test suite to perform setup and teardown. For the jsdom test environment, it instantiates a new JSDOM object and sets global and document objects, turning Node.js into a browser-like environment.
   - `jsdom` is a package that contains a headless implementation of the Document Object Model (DOM) that runs on Node.js. In effect, it turns Node.js into a browser-like environment that responds to the usual DOM APIs, such as the document API we’re trying to access in this test.
 - We tend to avoid using default exports as doing so keeps the name of our component and its usage in sync.
-- Although we’re using it here, the act function is not required for testing React
+- The `act` function has changed between the React 18 of the course and 19:
+  - https://react.dev/warnings/react-dom-test-utils
+- Although we’re using it here, the `act` function is not required for testing React
   - https://reacttdd.com/understanding-act
 
 ## Bookmark
