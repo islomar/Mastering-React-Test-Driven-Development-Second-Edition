@@ -133,7 +133,7 @@ describe("Appointment", () => {
 
     it("renders an h3 element", () => {
         render(<Appointment customer={blankCustomer} />);
-        
+
         expect(
             element("h3")
         ).not.toBeNull();
@@ -251,7 +251,7 @@ describe("AppointmentsDayView", () => {
 
         click(secondButton());
 
-        expect(secondButton().className).toContain("toggled");
+        expect(secondButton()).toHaveClass("toggled");
     });
 
     it("does not add toggled class if button is not selected", () => {
@@ -265,6 +265,6 @@ describe("AppointmentsDayView", () => {
             "toggled"
         );
 
-        expect(secondButton().className).not.toContain("toggled");
+        expect(secondButton()).not.toHaveClass("toggled");
     });
 });
