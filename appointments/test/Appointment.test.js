@@ -31,6 +31,11 @@ describe("Appointment", () => {
 
 describe("AppointmentsDayView", () => {
     let container;
+    const today = new Date();
+    const twoAppointments = [
+        {startsAt: today.setHours(12, 0)},
+        {startsAt: today.setHours(13, 0)},
+    ];
 
     beforeEach(() => {
         container = document.createElement("div");
@@ -54,13 +59,6 @@ describe("AppointmentsDayView", () => {
     });
 
     it("renders an li for each appointment", () => {
-
-        const today = new Date();
-        const twoAppointments = [
-            {startsAt: today.setHours(12, 0)},
-            {startsAt: today.setHours(13, 0)},
-        ];
-
         render(
             <AppointmentsDayView
                 appointments={twoAppointments}
@@ -72,12 +70,6 @@ describe("AppointmentsDayView", () => {
     });
 
     it("renders the time of each appointment", () => {
-        const today = new Date();
-        const twoAppointments = [
-            {startsAt: today.setHours(12, 0)},
-            {startsAt: today.setHours(13, 0)},
-        ];
-
         render(
             <AppointmentsDayView appointments={twoAppointments}/>
         );
