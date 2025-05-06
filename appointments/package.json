@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.27.1",
