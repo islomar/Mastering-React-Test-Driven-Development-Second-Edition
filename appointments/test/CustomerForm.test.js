@@ -7,6 +7,8 @@ import {
     element,
     click,
     submit,
+    submitButton,
+    change,
 } from "./reactTestExtensions";
 import { CustomerForm } from "../src/CustomerForm";
 
@@ -67,9 +69,7 @@ describe("CustomerForm", () => {
     it("renders a submit button", () => {
         render(<CustomerForm original={blankCustomer} />);
 
-        const button = element("input[type=submit]");
-
-        expect(button).not.toBeNull();
+        expect(submitButton()).not.toBeNull();
     });
 
     it("saves existing first name when submitted", () => {
@@ -100,5 +100,21 @@ describe("CustomerForm", () => {
         const event = submit(form());
 
         expect(event.defaultPrevented).toBe(true);
+    });
+
+    it("saves new first name when submitted", () => {
+        expect.hasAssertions();
+
+        render(
+            <CustomerForm
+                original={blankCustomer}
+                onSubmit={({ firstName }) =>
+                    expect(firstName).toEqual("Jamie")
+                }
+            />
+        );
+
+        change(field("firstName"), "Jamie");
+        click(submitButton());
     });
 });
