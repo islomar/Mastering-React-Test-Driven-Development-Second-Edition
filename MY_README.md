@@ -29,4 +29,5 @@ npm install --save @babel/runtime
   - https://reacttdd.com/understanding-act
 
 ## Bookmark
-https://learning.oreilly.com/library/view/mastering-react-test-driven/9781803247120/B18423_01.xhtml#_idParaDest-24
+https://learning.oreilly.com/library/view/mastering-react-test-driven/9781803247120/B18423_01.xhtml#_idParaDest-30
+Triangulating to remove hardcoding
