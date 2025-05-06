@@ -1,9 +1,9 @@
 import React from "react";
-import {act} from 'react';
 import {Appointment, AppointmentsDayView} from "../src/AppointmentDayView";
 import {
     initializeReactContainer,
     render,
+    click,
 } from "./reactTestExtensions";
 
 describe("Appointment", () => {
@@ -260,7 +260,7 @@ describe("AppointmentsDayView", () => {
         );
         const button = document.querySelectorAll("button")[1];
 
-        act(() => button.click());
+        click(button);
 
         expect(document.body.textContent).toContain("Jordan");
     });
