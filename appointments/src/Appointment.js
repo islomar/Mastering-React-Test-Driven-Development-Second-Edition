@@ -15,9 +15,8 @@ export const AppointmentsDayView = ({appointments}) => {
     const [selectedAppointment, setSelectedAppointment] = useState(0);
     return (
         <div id="appointmentsDayView">
-            appointments.map((appointment, index) => (
             <ol>
-                {appointments.map(((appointment, index) => (
+                {appointments.map((appointment, index) => (
                     <li key={appointment.startsAt}>
                         <button
                             type="button"
@@ -26,9 +25,8 @@ export const AppointmentsDayView = ({appointments}) => {
                             {appointmentTimeOfDay(appointment.startsAt)}
                         </button>
                     </li>
-                )))}
+                ))}
             </ol>
-            );
             {appointments.length === 0 ? (
                 <p>There are no appointments scheduled for today.</p>
             ) : (
