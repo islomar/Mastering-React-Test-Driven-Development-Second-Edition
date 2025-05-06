@@ -2,6 +2,10 @@ import React from "react";
 import {act} from 'react';
 import ReactDOM from "react-dom/client";
 import {Appointment, AppointmentsDayView} from "../src/AppointmentDayView";
+import {
+    initializeReactContainer,
+    container,
+} from "./reactTestExtensions";
 
 describe("Appointment", () => {
     const blankCustomer = {
@@ -9,10 +13,8 @@ describe("Appointment", () => {
         lastName: "",
         phoneNumber: "",
     };
-    let container;
     beforeEach(() => {
-        container = document.createElement("div");
-        document.body.replaceChildren(container);
+        initializeReactContainer();
     });
 
     const render = component => act(() => ReactDOM.createRoot(container).render(component));
@@ -174,7 +176,6 @@ describe("Appointment", () => {
 });
 
 describe("AppointmentsDayView", () => {
-    let container;
     const today = new Date();
     const twoAppointments = [
         {
@@ -188,8 +189,7 @@ describe("AppointmentsDayView", () => {
     ];
 
     beforeEach(() => {
-        container = document.createElement("div");
-        document.body.replaceChildren(container);
+        initializeReactContainer();
     });
 
     const render = (component) => act(() => ReactDOM.createRoot(container).render(component));
