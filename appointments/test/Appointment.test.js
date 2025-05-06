@@ -4,13 +4,17 @@ import ReactDOM from "react-dom/client";
 import { Appointment } from "../src/Appointment";
 
 describe("Appointment", () => {
+    let container;
+    beforeEach(() => {
+        container = document.createElement("div");
+        document.body.replaceChildren(container);
+    });
+    
     it("renders the customer first name", () => {
         const customer = { firstName: "Ashley" };
         const component = (
             <Appointment customer={customer} />
         );
-        const container = document.createElement("div");
-        document.body.replaceChildren(container);
 
         act(() =>
             ReactDOM.createRoot(container).render(component)
@@ -24,8 +28,6 @@ describe("Appointment", () => {
         const component = (
             <Appointment customer={customer} />
         );
-        const container = document.createElement("div");
-        document.body.replaceChildren(container);
 
         act(() =>
             ReactDOM.createRoot(container).render(component)
