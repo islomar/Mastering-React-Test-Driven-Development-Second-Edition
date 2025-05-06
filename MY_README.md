@@ -1,7 +1,9 @@
 # Mastering React Test-Driven Development, Second Edition (islomar's notes)
 - https://github.com/islomar/Mastering-React-Test-Driven-Development-Second-Edition
+- 4 parts, 19 chapters
 
-## Chapter 1 - Exploring the TDD Workflow
+## Part 1 - Exploring the TDD Workflow
+### Chapter 1: First Steps with Test-Driven Development
 ```
 mkdir appointments
 cd appointments
@@ -31,7 +33,19 @@ npm install --save @babel/runtime
 - https://babeljs.io/docs/babel-preset-env
 - https://reacttdd.com/use-of-let
 
-## Chapter 2: Rendering Lists and Detail Views
+### Chapter 2: Rendering Lists and Detail Views
+- TBD
+
+## Part 2 – Building Application Features
+### TBD
+- TBD
+
+## Part 3 – Interactivity
+### TBD
+- TBD
+
+## Part 4 – Behavior-Driven Development with Cucumber
+### TBD
 - TBD
 
 ## Bookmark
