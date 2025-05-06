@@ -54,6 +54,27 @@ npm install --save @babel/runtime
     - `npm install --save-dev webpack webpack-cli babel-loader`
 - `npm run build`
 
+### Chapter 3: Refactoring the Test Suite
+- Jest matchers:
+  - The following GitHub repository contains useful matchers for testing React components: https://github.com/jest-community/jest-extended
+  - The following link provides the source of Jest’s matcher utilities, which I find useful for figuring out how to write simple matchers: https://github.com/facebook/jest/tree/main/packages/jest-matcher-utils
+
+### Chapter 4: Test-Driving Data Input
+- https://github.com/PacktPublishing/Mastering-React-Test-Driven-Development-Second-Edition/tree/main/Chapter04
+
+
+### Chapter 5: TBD
+- TBD
+
+### Chapter 6: TBD
+- TBD
+
+### Chapter 7: TBD
+- TBD
+
+### Chapter 8: TBD
+- TBD
+
 ## Part 2 – Building Application Features
 
 ### TBD
@@ -74,5 +95,5 @@ npm install --save @babel/runtime
 
 ## Bookmark
 
-https://learning.oreilly.com/library/view/mastering-react-test-driven/9781803247120/B18423_01.xhtml#_idParaDest-30
-Triangulating to remove hardcoding
+https://learning.oreilly.com/library/view/mastering-react-test-driven/9781803247120/B18423_04.xhtml#_idParaDest-68
+Accepting text input
