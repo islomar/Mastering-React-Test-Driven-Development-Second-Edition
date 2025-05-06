@@ -1,10 +1,6 @@
 import React from "react";
 import {Appointment, AppointmentsDayView} from "../src/AppointmentDayView";
-import {
-    initializeReactContainer,
-    render,
-    click,
-} from "./reactTestExtensions";
+import {click, element, elements, initializeReactContainer, render, textOf, typesOf,} from "./reactTestExtensions";
 
 describe("Appointment", () => {
     const blankCustomer = {
@@ -17,7 +13,7 @@ describe("Appointment", () => {
     });
 
     const appointmentTable = () =>
-        document.querySelector(
+        element(
             "#appointmentView > table"
         );
 
@@ -137,8 +133,9 @@ describe("Appointment", () => {
 
     it("renders an h3 element", () => {
         render(<Appointment customer={blankCustomer} />);
+        
         expect(
-            document.querySelector("h3")
+            element("h3")
         ).not.toBeNull();
     });
 
@@ -152,7 +149,7 @@ describe("Appointment", () => {
             />
         );
         expect(
-            document.querySelector("h3").textContent
+            element("h3").textContent
         ).toEqual("Today’s appointment at 09:00");
     });
 });
@@ -174,18 +171,18 @@ describe("AppointmentsDayView", () => {
         initializeReactContainer();
     });
 
+    const secondButton = () => elements("button")[1];
+
     it("renders a div with the right id", () => {
         render(<AppointmentsDayView appointments={[]}/>);
 
-        expect(document.querySelector("div#appointmentsDayView")).not.toBeNull();
+        expect(element("div#appointmentsDayView")).not.toBeNull();
     });
 
     it("renders an ol element to display appointments", () => {
         render(<AppointmentsDayView appointments={[]}/>);
 
-        const listElement = document.querySelector("ol");
-
-        expect(listElement).not.toBeNull();
+        expect(element("ol")).not.toBeNull();
     });
 
     it("renders an li for each appointment", () => {
@@ -195,8 +192,7 @@ describe("AppointmentsDayView", () => {
             />
         );
 
-        const listChildren = document.querySelectorAll("ol > li");
-        expect(listChildren).toHaveLength(2);
+        expect(elements("ol > li")).toHaveLength(2);
     });
 
     it("renders the time of each appointment", () => {
@@ -204,9 +200,9 @@ describe("AppointmentsDayView", () => {
             <AppointmentsDayView appointments={twoAppointments}/>
         );
 
-        const listChildren = document.querySelectorAll("li");
-        expect(listChildren[0].textContent).toEqual("12:00");
-        expect(listChildren[1].textContent).toEqual("13:00");
+        expect(textOf(elements("li"))).toEqual([
+            "12:00", "13:00"
+        ]);
     });
 
     it("initially shows a message saying there are no appointments today", () => {
@@ -228,9 +224,10 @@ describe("AppointmentsDayView", () => {
             <AppointmentsDayView appointments={twoAppointments}/>
         );
 
-        const buttons = document.querySelectorAll("li > button");
-        expect(buttons).toHaveLength(2);
-        expect(buttons[0].type).toEqual("button");
+        expect(typesOf(elements("li > *"))).toEqual([
+            "button",
+            "button",
+        ]);
     });
 
     it("renders another appointment when selected", () => {
@@ -239,10 +236,35 @@ describe("AppointmentsDayView", () => {
                 appointments={twoAppointments}
             />
         );
-        const button = document.querySelectorAll("button")[1];
 
-        click(button);
+        click(secondButton());
 
         expect(document.body).toContainText("Jordan");
+    });
+
+    it("adds toggled class to button when selected", () => {
+        render(
+            <AppointmentsDayView
+                appointments={twoAppointments}
+            />
+        );
+
+        click(secondButton());
+
+        expect(secondButton().className).toContain("toggled");
+    });
+
+    it("does not add toggled class if button is not selected", () => {
+        render(
+            <AppointmentsDayView
+                appointments={twoAppointments}
+            />
+        );
+
+        expect(secondButton().className).not.toMatch(
+            "toggled"
+        );
+
+        expect(secondButton().className).not.toContain("toggled");
     });
 });
