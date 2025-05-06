@@ -34,7 +34,8 @@ npm install --save @babel/runtime
 - https://reacttdd.com/use-of-let
 
 ### Chapter 2: Rendering Lists and Detail Views
-- TBD
+- Hooks are a feature of React that manages various non-rendering related operations. 
+- The `useState` hook stores data across multiple renders of your function.
 
 ## Part 2 – Building Application Features
 ### TBD
