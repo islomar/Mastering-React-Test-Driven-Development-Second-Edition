@@ -61,7 +61,7 @@ npm install --save @babel/runtime
 
 ### Chapter 4: Test-Driving Data Input
 - https://github.com/PacktPublishing/Mastering-React-Test-Driven-Development-Second-Edition/tree/main/Chapter04
-
+- Always consider React warnings to be a test failure. Don’t proceed without first fixing any warnings.
 
 ### Chapter 5: TBD
 - TBD

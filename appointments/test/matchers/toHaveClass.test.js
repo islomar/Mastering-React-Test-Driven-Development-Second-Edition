@@ -44,7 +44,7 @@ describe("toHaveClass matcher", () => {
         ).toContain(`Actual classes: ["class1"]`);
     });
 
-    it("retunrs a message with empty array if there are no classes", () => {
+    it("returns a message with empty array if there are no classes", () => {
         const domElement = { className: "" };
         const result = toHaveClass(domElement, "class1");
         expect(
