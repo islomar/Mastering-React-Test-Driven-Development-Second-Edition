@@ -96,5 +96,5 @@ npm install --save @babel/runtime
 
 ## Bookmark
 
-https://learning.oreilly.com/library/view/mastering-react-test-driven/9781803247120/B18423_04.xhtml#_idParaDest-68
-Accepting text input
+https://learning.oreilly.com/library/view/mastering-react-test-driven/9781803247120/B18423_04.xhtml#_idParaDest-74
+Duplicating tests for multiple form fields
