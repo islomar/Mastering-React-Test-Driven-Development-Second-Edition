@@ -27,6 +27,8 @@ describe("AppointmentForm", () => {
         service: "",
     };
 
+    const services = ["Cut", "Blow-dry"];
+
     beforeEach(() => {
         initializeReactContainer();
     });
@@ -52,8 +54,6 @@ describe("AppointmentForm", () => {
         });
 
         it("lists all salon services", () => {
-            const services = ["Cut", "Blow-dry"];
-
             render(<AppointmentForm original={blankAppointment} selectableServices={services}/>);
 
             expect(
@@ -62,7 +62,6 @@ describe("AppointmentForm", () => {
         });
 
         it("pre-selects the existing value", () => {
-            const services = ["Cut", "Blow-dry"];
             const appointment = { service: "Blow-dry" };
 
             render(
