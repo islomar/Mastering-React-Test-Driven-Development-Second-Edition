@@ -64,16 +64,16 @@ npm install --save @babel/runtime
 - Always consider React warnings to be a test failure. Don’t proceed without first fixing any warnings.
 - React does some pretty clever stuff on top of the DOM’s usual event system.
 
-### Chapter 5: TBD
+### Chapter 5: Adding Complex Form Interactions
+- defaultProps is a nifty mechanism that React offers for setting default prop values that will be used when required props are not explicitly provided.
+
+### Chapter 6: Exploring Test Doubles
 - TBD
 
-### Chapter 6: TBD
+### Chapter 7: Testing useEffect and Mocking Components
 - TBD
 
-### Chapter 7: TBD
-- TBD
-
-### Chapter 8: TBD
+### Chapter 8: Building an Application Component
 - TBD
 
 ## Part 2 – Building Application Features
